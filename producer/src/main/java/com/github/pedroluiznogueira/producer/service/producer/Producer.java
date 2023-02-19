@@ -1,12 +1,13 @@
-package com.github.pedroluiznogueira.producer.service.producer;
+package com.producer.service.producer;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.pedroluiznogueira.producer.domain.FoodOrder;
+import com.producer.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
 @Slf4j
@@ -14,23 +15,22 @@ import org.springframework.stereotype.Component;
 public class Producer {
 
     @Value("${topic.name}")
-    private String orderTopic;
+    private String topic;
 
-    private final ObjectMapper objectMapper;
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, User> kafkaTemplate;
 
     @Autowired
-    public Producer(KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
+    public Producer(KafkaTemplate<String, User> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
-        this.objectMapper = objectMapper;
     }
 
-    public String sendMessage(FoodOrder foodOrder) throws JsonProcessingException {
-        String orderAsMessage = objectMapper.writeValueAsString(foodOrder);
-        kafkaTemplate.send(orderTopic, orderAsMessage);
+    public void sendMessage(User user) {
 
-        log.info("food order produced {}", orderAsMessage);
+        Message<User> message = MessageBuilder
+                .withPayload(user)
+                .setHeader(KafkaHeaders.TOPIC, topic)
+                .build();
 
-        return "message sent";
+        kafkaTemplate.send(message);
     }
 }
