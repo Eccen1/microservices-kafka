@@ -1,6 +1,6 @@
-package com.producer.service.producer;
+package com.github.pedroluiznogueira.producer.service.producer;
 
-import com.producer.entity.User;
+import com.github.pedroluiznogueira.producer.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

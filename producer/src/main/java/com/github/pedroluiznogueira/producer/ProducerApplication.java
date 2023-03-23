@@ -1,4 +1,4 @@
-package com.producer;
+package com.github.pedroluiznogueira.producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

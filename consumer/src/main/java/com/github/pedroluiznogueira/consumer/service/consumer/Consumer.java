@@ -1,10 +1,10 @@
-package com.consumer.service.consumer;
+package com.github.pedroluiznogueira.consumer.service.consumer;
 
-import com.consumer.entity.dto.UserDto;
-import com.consumer.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.consumer.entity.User;
+import com.github.pedroluiznogueira.consumer.entity.User;
+import com.github.pedroluiznogueira.consumer.entity.dto.UserDto;
+import com.github.pedroluiznogueira.consumer.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,8 @@
-package com.producer.service;
+package com.github.pedroluiznogueira.producer.service;
 
-import com.producer.entity.User;
-import com.producer.service.producer.Producer;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.pedroluiznogueira.producer.entity.User;
+import com.github.pedroluiznogueira.producer.service.producer.Producer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

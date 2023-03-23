@@ -1,7 +1,7 @@
-package com.consumer.service;
+package com.github.pedroluiznogueira.consumer.service;
 
-import com.consumer.repository.UserRepository;
-import com.consumer.entity.User;
+import com.github.pedroluiznogueira.consumer.entity.User;
+import com.github.pedroluiznogueira.consumer.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

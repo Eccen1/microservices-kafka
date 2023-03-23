@@ -1,7 +1,7 @@
-package com.consumer.controller;
+package com.github.pedroluiznogueira.consumer.controller;
 
-import com.consumer.entity.User;
-import com.consumer.service.UserService;
+import com.github.pedroluiznogueira.consumer.entity.User;
+import com.github.pedroluiznogueira.consumer.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

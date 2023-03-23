@@ -1,9 +1,11 @@
-package com.producer.entity;
+package com.github.pedroluiznogueira.producer.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -15,5 +17,7 @@ public class User {
     private String name;
 
     private String lastName;
+
+    private Date registration;
 
 }

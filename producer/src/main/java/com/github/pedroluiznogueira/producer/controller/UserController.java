@@ -1,7 +1,7 @@
-package com.producer.controller;
+package com.github.pedroluiznogueira.producer.controller;
 
-import com.producer.entity.User;
-import com.producer.service.UserService;
+import com.github.pedroluiznogueira.producer.entity.User;
+import com.github.pedroluiznogueira.producer.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
